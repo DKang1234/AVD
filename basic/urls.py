@@ -1,7 +1,10 @@
 from django.urls import path 
-from .views import SchoolListViews
+from django.conf.urls import url
+from .views import SchoolListViews, SchoolDetailView
+from basic import views
 
 app_name = "basic_app"
 urlpatterns = [
-    path('list/', SchoolListView.as_view(), name='list')
+    url(r'^$', views.SchoolListViews.as_view(), name='list'),
+    url(r'^(?P<pk>[-\w]+)/$', views.SchoolDetailView.as_view(),name='detail'),
 ]

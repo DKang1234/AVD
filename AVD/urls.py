@@ -19,6 +19,6 @@ from basic import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('basic/', include('basic.urls', name="basic")),
+    path('basic/', include('basic.urls')),
     path('', views.IndexView.as_view(), name="home"),
 ]
