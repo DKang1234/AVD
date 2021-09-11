@@ -1,0 +1,31 @@
+{% extends "basic_app/basic_app_base.html" %}
+
+{% block body_block %}
+
+<h1> Here is a school</h1>
+
+        <h2 style="color: rgb(127, 143, 146);">{{schools_details.name}}</h2>
+
+    <p>{{schools_details.id}}</p>
+
+    <p>{{schools_details.location}}</p>
+
+    <p>{{schools_details.principal}}</p>
+
+    <h3>Student List:</h3>
+
+        {% for student in school_details.students.all %}
+            <p>{{students.name}} is {{students.age}} years old.</p>
+        {% endfor %} -->
+
+
+
+<div class="container">
+    <p><a class='btn btn-warning' href="{% url 'basic_app:update' pk=school_details.pk %}">Update</a>
+        <a class='btn btn-danger' href="{% url 'basic_app:delete' pk=school_details.pk %}">Delete</a></p>
+</div>
+
+
+
+
+{% endblock %}
